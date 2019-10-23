@@ -1,0 +1,7 @@
+{
+	"Here are some links to help you start:": "Here are some links to help you start:",
+	"Here an example with params: {link} and {pwd}": "Here are some links to help you start: {link} and {pwd}",
+	"This comes from the component {value}": "This comes from the component {{value}}",
+	"{fixed} You will delete POI": "{count, plural, =0 {No POIs} one {Delete one POI} other {Delete # POIs}} - english: {fixed}",
+	"Plurals with 0, 1 and many": "Plurals with 0, 1 and many"
+}

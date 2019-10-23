@@ -1,0 +1,7 @@
+{
+	"Here are some links to help you start:": "Aqui unos enlaces para comenzar:",
+	"Here an example with params: {link} and {pwd}": "Aqui unos enlaces para comenzar: {link} y {pwd}",
+	"This comes from the component {value}": "Eso llega desde el component {{value}}",
+	"{fixed} You will delete POI": "{count, plural, =0 {Ningun POI} one {Borrar un POI} other {Borrar # POIs}} - spanish: {fixed}",
+	"Plurals with 0, 1 and many": "Plurales con 0, 1 y mas"
+}

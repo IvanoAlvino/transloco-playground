@@ -3,19 +3,33 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+  <button (click)="switchToEnglish()">Switch to English</button>
+  <button (click)="switchToSpanish()">Switch to Spanish</button>
 </div>
-<h2>Here are some links to help you start: </h2>
+
+<ng-container *transloco="let t">
+  <p>{{ t('Here are some links to help you start:') }}</p>
+  <p>{{ t('Here an example with params: {link} and {pwd}', params) }}</p>
+</ng-container>
+
+<h1>{{ 'Here are some links to help you start:' | transloco }}</h1>
+<h1>{{ 'Here an example with params: {link} and {pwd}' | transloco: params }}</h1>
+<span>{{result}}</span>
+
+<h1>{{ 'Plurals with 0, 1 and many' | transloco}}</h1>
+<ng-container *transloco="let t">
+  <ul>
+    <li>{{ t('{fixed} You will delete POI', {count: 0, fixed: "THIS WILL NOT CHANGE"}) }}</li>
+    <li>{{ t('{fixed} You will delete POI', {count: 1, fixed: "THIS WILL NOT CHANGE"}) }}</li>
+    <li>{{ t('{fixed} You will delete POI', {count: 2, fixed: "THIS WILL NOT CHANGE"}) }}</li>
+  </ul>
+</ng-container>
+
+<h2>Next</h2>
 <ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
+  <li>{{ '{fixed} You will delete POI' | transloco: {count: 0, fixed: "THIS WILL NOT CHANGE"} }}</li>
+  <li>{{ '{fixed} You will delete POI' | transloco: {count: 1, fixed: "THIS WILL NOT CHANGE"} }}</li>
+  <li>{{ '{fixed} You will delete POI' | transloco: {count: 2, fixed: "THIS WILL NOT CHANGE"} }}</li>
 </ul>
 
 <router-outlet></router-outlet>
